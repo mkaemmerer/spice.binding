@@ -1,0 +1,21 @@
+{
+  "name": "spice.binding",
+  "version": "0.0.0",
+  "authors": [
+    "Matt Kaemmerer <matthew.kaemmerer@gmail.com>"
+  ],
+  "description": "Databinding extensions for spice",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bacon": "~0.7.20",
+    "bacon.model": "~0.1.11",
+    "bacon.jquery": "~0.4.9"
+  }
+}
