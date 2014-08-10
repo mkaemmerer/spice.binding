@@ -4,41 +4,48 @@
   var radio_group_id = 0;
 
   $spice
-    .defineTag('textField', function(attrs){
-      return this.open($('<input type="text"></input>'))
+    .defineTag('textarea', function(attrs){
+      return this.open($('<textarea></textarea>')[0])
         .attrs(attrs)
         .defineModifier('bind', function(el, model){
-          Bacon.$.textFieldValue(el).bind(model);
+          Bacon.$.textFieldValue($(el)).bind(model);
+        });
+    })
+    .defineTag('textField', function(attrs){
+      return this.open($('<input type="text"></input>')[0])
+        .attrs(attrs)
+        .defineModifier('bind', function(el, model){
+          Bacon.$.textFieldValue($(el)).bind(model);
         });
     })
     .defineTag('passwordField', function(attrs){
-      return this.open($('<input type="password"></input>'))
+      return this.open($('<input type="password"></input>')[0])
         .attrs(attrs)
         .defineModifier('bind', function(el, model){
-          Bacon.$.textFieldValue(el).bind(model);
+          Bacon.$.textFieldValue($(el)).bind(model);
         });
     })
     .defineTag('checkbox', function(attrs){
-      return this.open($('<input type="checkbox"></input>'))
+      return this.open($('<input type="checkbox"></input>')[0])
         .attrs(attrs)
         .defineModifier('bind', function(el, model){
-          Bacon.$.checkBoxValue(el).bind(model);
+          Bacon.$.checkBoxValue($(el)).bind(model);
         });
     })
     .defineTag('radioButton', function(attrs){
-      return this.open($('<input type="radio"></input>'))
+      return this.open($('<input type="radio"></input>')[0])
         .attrs(attrs)
         .defineModifier('bind', function(el, model){
-          Bacon.$.checkBoxValue(el).bind(model);
+          Bacon.$.checkBoxValue($(el)).bind(model);
         });
     })
     .defineTag('select', function(attrs){
-      return this.open($('<select></select>'))
+      return this.open($('<select></select>')[0])
         .attrs(attrs)
         .defineModifier('bind', function(el, model){
           this.value(model);
           window.setTimeout(function(){
-            Bacon.$.selectValue(el).bind(model);
+            Bacon.$.selectValue($(el)).bind(model);
           }, 0);
         });
     })
