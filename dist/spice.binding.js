@@ -39,18 +39,9 @@
           Bacon.$.checkBoxValue($(el)).bind(model);
         });
     })
-    .defineTag('select', function(attrs){
-      return this.open($('<select></select>')[0])
-        .attrs(attrs)
-        .defineModifier('bind', function(el, model){
-          this.value(model);
-          window.setTimeout(function(){
-            Bacon.$.selectValue($(el)).bind(model);
-          }, 0);
-        });
-    })
     .defineTag('radioGroup', function(attrs){
-      var group_id = radio_group_id++;
+      var group_id = attrs.name || radio_group_id++;
+      delete attrs.name;
 
       return this.div(attrs)
         .defineTag('radioButton', function(attrs){
@@ -66,5 +57,23 @@
             Bacon.$.radioGroupValue(radio_buttons).bind(model);
           }, 0);
         });
+    })
+    .defineTag('input', function(attrs){
+      return this.open($('<input></input>')[0])
+        .attrs(attrs)
+        .defineModifier('bind', function(el, model){
+          Bacon.$.textFieldValue($(el)).bind(model);
+        });
+    })
+    .defineTag('select', function(attrs){
+      return this.open($('<select></select>')[0])
+        .attrs(attrs)
+        .defineModifier('bind', function(el, model){
+          this.value(model);
+          window.setTimeout(function(){
+            Bacon.$.selectValue($(el)).bind(model);
+          }, 0);
+        });
     });
+    
 })(window.$spice, window.$, window.Bacon);

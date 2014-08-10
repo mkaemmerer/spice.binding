@@ -1,8 +1,8 @@
 {
   "name": "spice.binding",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
-    "Matt Kaemmerer <matthew.kaemmerer@gmail.com>"
+    "Matt Kaemmerer <mattk@spiceworks.com>"
   ],
   "description": "Databinding extensions for spice",
   "license": "MIT",
