@@ -1,6 +1,6 @@
 {
   "name": "spice.binding",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "authors": [
     "Matt Kaemmerer <mattk@spiceworks.com>"
   ],
@@ -18,7 +18,7 @@
     "bacon": "~0.7.20",
     "bacon.model": "~0.1.11",
     "bacon.jquery": "~0.4.9",
-    "spice": "~0.6.6"
+    "spice": "~0.6.8"
   },
   "devDependencies": {
     "normalize.css": "~3.0.1",
