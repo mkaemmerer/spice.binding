@@ -28,6 +28,14 @@
           Bacon.$.textFieldValue($(el)).bind(model);
         });
     })
+    .defineTag('numberField', function(attrs){
+      return this.open($('<input type="number" autocomplete="off" spellcheck="false"></input>')[0])
+        .attrs(attrs || {})
+        .defineModifier('bind', function(el, model){
+          model = this.eval(model, true);
+          Bacon.$.textFieldValue($(el)).bind(model);
+        });
+    })
     .defineTag('checkbox', function(attrs){
       return this.open($('<input type="checkbox"></input>')[0])
         .attrs(attrs || {})
