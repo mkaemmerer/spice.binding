@@ -53,15 +53,17 @@
         });
     })
     .defineTag('radioGroup', function(attrs){
+      attrs = attrs || {};
       var group_id = attrs.name || radio_group_id++;
       delete attrs.name;
 
       return this.div(attrs)
         .defineTag('radioButton', function(attrs){
+          attrs = attrs || {};
           delete attrs.name;
 
           return this.open($('<input type="radio"></input>'))
-            .attrs(attrs || {})
+            .attrs(attrs)
             .attr('name', group_id);
         })
         .defineModifier('bind', function(el, model){
